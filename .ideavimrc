@@ -11,11 +11,6 @@ source ~/.vimrc
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
 
-" Do incremental searching.
-set incsearch
-
-" Don't use Ex mode, use Q for formatting.
-map Q gq
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
@@ -25,12 +20,138 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 
 
+" (Move between blocks)
+" map J }
+" map K {
+
+" 块缩进 (Block ident)
+" vmap < <gv
+" vmap > >gv
+
+" (Move between panes top/bottom/left/right)
+" map <C-k> <C-w>k
+" map <C-j> <C-w>j
+" map <C-h> <C-w>h
+" map <C-l> <C-w>l
+
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
 
-"" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
+" Git
+map <leader>gl <Action>(Vcs.Show.Log)
+map <leader>gh <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>gc <Action>(Vcs.Show.Local.Changes)
+map <leader>gu <Action>(Vcs.UpdateProject)
 
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
+" format (current line, all, optimiye imports)
+map <leader>fl V<Action>(ReformatCode)
+map <leader>fc <Action>(ReformatCode)
+map <leader>fi <Action>(OptimizeImports)
+
+" Find
+map <leader>fa <Action>(GotoAction)
+map <leader>ff <Action>(SearchEverywhere)
+map <leader>fr <Action>(RecentFiles)
+map <leader>ft <Action>(FindInPath)
+
+" (Move between methods)
+map mu <Action>(MethodUp)
+map md <Action>(MethodDown)
+
+" (Code collapse)
+map cc <Action>(CollapseRegion)
+map ce <Action>(ExpandRegion)
+map ca <Action>(CollapseAllRegions)
+map cE <Action>(ExpandAllRegions)
+
+" (Comment)
+map cl <Action>(CommentByLineComment)
+
+" Join Lines
+map <leader>j <Action>(EditorJoinLines)
+
+" View mode
+map <leader>vf <Action>(ToggleFullScreen)
+map <leader>vv <Action>(ToggleDistractionFreeMode)
+map <leader>vp <Action>(TogglePresentationMode)
+map <leader>vm <Action>(HideAllWindows)
+
+" Forward/Back
+map <C-i> <Action>(Back)
+map <C-o> <Action>(Forward)
+
+" (Tab switch)
+map <S-Tab> <Action>(PreviousTab)
+map <Tab> <Action>(NextTab)
+
+" (Close current/all/others/unpinned tabs)
+map <leader>tc <Action>(CloseContent)
+map <leader>ta <Action>(CloseAllEditors)
+map <leader>to <Action>(CloseAllEditorsButActive)
+
+" Run & Debug
+map <leader>rc <Action>(ChooseRunConfiguration)
+map <leader>rr <Action>(Rerun)
+map <leader>rd <Action>(ChooseDebugConfiguration)
+
+" Run test
+map <leader>td <Action>(ContextDebug)
+map <leader>tr <Action>(ContextRun)
+
+" (Terminal)
+" (ActivateTerminal with project root dir)
+map <leader>xo <Action>(ActivateTerminalToolWindow)
+
+" (Pane vertically split/horizontally split/close)
+map <leader>sv <Action>(SplitVertically)
+map <leader>sh <Action>(SplitHorizontally)
+map <leader>su <Action>(Unsplit)
+
+" Move line up/down option + k/j
+map <M-k> <Action>(MoveLineUp)
+map <M-j> <Action>(MoveLineDown)
+
+" Goto
+map gs <Action>(GotoSuperMethod)
+map gi <Action>(GotoImplementation)
+map gd <Action>(GotoDeclaration)
+map gt <Action>(GotoTest)
+map ge <Action>(GotoNextError)
+map gE <Action>(GotoPreviousError)
+
+" New ...
+map <leader>nf <Action>(NewElement)
+map <leader>nd <Action>(NewDir)
+map <leader>np <Action>(NewProject)
+map <leader>nm <Action>(NewModule)
+
+" (Close all notifications)
+map <leader>nc <Action>(CloseAllNotifications)
+
+" Build
+map <leader>b <Action>(BuildMenu)
+
+" Do something
+map <leader>dr <Action>(RefactoringMenu)
+map <leader>di <Action>(ShowIntentionActions)
+map <leader>db <Action>(ToggleLineBreakpoint)
+map <leader>dr <Action>(RenameElement)
+
+" Show something
+map <leader>ss <Action>(FileStructurePopup)
+map <leader>su <Action>(ShowUsages)
+map <leader>sU <Action>(FindUsages)
+map <leader>se <Action>(ShowErrorDescription)
+map <leader>sd <Action>(QuickJavaDoc)
+map <leader>sa <Action>(Annotate)
+
+" (Stop execute)
+map <C-c> <Action>(Stop)
+
+" execute Gradle tasks
+map <leader>gt <Action>(Gradle.ExecuteTask)
+
+" (Project management)
+map <leader>pr <Action>(ManageRecentProjects)
+map <leader>pl <Action>(RecentProjectListGroup)
+map <leader>pc <Action>(CloseProject)
+
