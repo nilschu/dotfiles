@@ -20,20 +20,6 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 
 
-" (Move between blocks)
-" map J }
-" map K {
-
-" 块缩进 (Block ident)
-" vmap < <gv
-" vmap > >gv
-
-" (Move between panes top/bottom/left/right)
-" map <C-k> <C-w>k
-" map <C-j> <C-w>j
-" map <C-h> <C-w>h
-" map <C-l> <C-w>l
-
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 
 " Git
@@ -58,13 +44,13 @@ map mu <Action>(MethodUp)
 map md <Action>(MethodDown)
 
 " (Code collapse)
-map cc <Action>(CollapseRegion)
-map ce <Action>(ExpandRegion)
-map ca <Action>(CollapseAllRegions)
-map cE <Action>(ExpandAllRegions)
+map <leader>cc <Action>(CollapseRegion)
+map <leader>ce <Action>(ExpandRegion)
+map <leader>ca <Action>(CollapseAllRegions)
+map <leader>cE <Action>(ExpandAllRegions)
 
 " (Comment)
-map cl <Action>(CommentByLineComment)
+map <leader>cl <Action>(CommentByLineComment)
 
 " Join Lines
 map <leader>j <Action>(EditorJoinLines)
@@ -74,6 +60,7 @@ map <leader>vf <Action>(ToggleFullScreen)
 map <leader>vv <Action>(ToggleDistractionFreeMode)
 map <leader>vp <Action>(TogglePresentationMode)
 map <leader>vm <Action>(HideAllWindows)
+map <leader>vz <Action>(ChangeIdeScale)
 
 " Forward/Back
 map <C-i> <Action>(Back)
@@ -130,11 +117,18 @@ map <leader>nc <Action>(CloseAllNotifications)
 " Build
 map <leader>b <Action>(BuildMenu)
 
+" Inline / extract
+map <leader>il <Action>(Inline)
+map <leader>ev <Action>(IntroduceVariable)
+map <leader>em <Action>(ExtractFunction)
+
+" refactor
+map <leader>rc <Action>(RefactoringMenu)
+map <leader>re <Action>(RenameElement)
+
 " Do something
-map <leader>dr <Action>(RefactoringMenu)
 map <leader>di <Action>(ShowIntentionActions)
 map <leader>db <Action>(ToggleLineBreakpoint)
-map <leader>dr <Action>(RenameElement)
 
 " Show something
 map <leader>ss <Action>(FileStructurePopup)
