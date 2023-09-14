@@ -75,6 +75,10 @@ map <leader>tc <Action>(CloseContent)
 map <leader>ta <Action>(CloseAllEditors)
 map <leader>to <Action>(CloseAllEditorsButActive)
 
+" refactor
+map <leader>rf <Action>(RefactoringMenu)
+map <leader>re <Action>(RenameElement)
+
 " Run & Debug
 map <leader>rc <Action>(ChooseRunConfiguration)
 map <leader>rr <Action>(Rerun)
@@ -122,13 +126,10 @@ map <leader>il <Action>(Inline)
 map <leader>ev <Action>(IntroduceVariable)
 map <leader>em <Action>(ExtractFunction)
 
-" refactor
-map <leader>rc <Action>(RefactoringMenu)
-map <leader>re <Action>(RenameElement)
-
 " Do something
 map <leader>di <Action>(ShowIntentionActions)
 map <leader>db <Action>(ToggleLineBreakpoint)
+map <leader>dg <Action>(Gradle.ExecuteTask)
 
 " Show something
 map <leader>ss <Action>(FileStructurePopup)
@@ -140,9 +141,6 @@ map <leader>sa <Action>(Annotate)
 
 " (Stop execute)
 map <C-c> <Action>(Stop)
-
-" execute Gradle tasks
-map <leader>gt <Action>(Gradle.ExecuteTask)
 
 " (Project management)
 map <leader>pr <Action>(ManageRecentProjects)
