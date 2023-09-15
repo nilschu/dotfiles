@@ -124,7 +124,8 @@ map <leader>b <Action>(BuildMenu)
 " Inline / extract
 map <leader>il <Action>(Inline)
 map <leader>ev <Action>(IntroduceVariable)
-map <leader>em <Action>(ExtractFunction)
+map <leader>em <Action>(ExtractMethod)
+map <leader>ef <Action>(ExtractFunction)
 
 " Do something
 map <leader>di <Action>(ShowIntentionActions)
