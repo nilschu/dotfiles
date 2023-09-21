@@ -147,4 +147,5 @@ map <C-c> <Action>(Stop)
 map <leader>pr <Action>(ManageRecentProjects)
 map <leader>pl <Action>(RecentProjectListGroup)
 map <leader>pc <Action>(CloseProject)
+map <leader>po <Action>(OpenFile)
 
