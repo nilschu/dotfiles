@@ -8,6 +8,8 @@ set noswapfile
 " repeat . for all marked lines
 vnoremap . :norm.<CR>
 
+" do not replace default register on pasting
+xnoremap <expr> p 'pgv"'.v:register.'y`>'
 
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
