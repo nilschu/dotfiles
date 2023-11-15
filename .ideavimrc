@@ -19,6 +19,18 @@ Plug 'machakann/vim-highlightedyank'
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 
+" Goto
+map gs <Action>(GotoSuperMethod)
+map gi <Action>(GotoImplementation)
+map gd <Action>(GotoDeclaration)
+map gt <Action>(GotoTest)
+map ge <Action>(GotoNextError)
+map gE <Action>(GotoPreviousError)
+
+" Gradle 
+map <leader>ge <Action>(Gradle.ExecuteTask)
+map <leader>gr <Action>(ExternalSystem.ProjectRefreshAction)
+
 " Git
 map <leader>gl <Action>(Vcs.Show.Log)
 map <leader>gh <Action>(Vcs.ShowTabbedFileHistory)
@@ -98,13 +110,6 @@ map <leader>su <Action>(Unsplit)
 map <M-k> <Action>(MoveLineUp)
 map <M-j> <Action>(MoveLineDown)
 
-" Goto
-map gs <Action>(GotoSuperMethod)
-map gi <Action>(GotoImplementation)
-map gd <Action>(GotoDeclaration)
-map gt <Action>(GotoTest)
-map ge <Action>(GotoNextError)
-map gE <Action>(GotoPreviousError)
 
 " New ...
 map <leader>nf <Action>(NewElement)
@@ -127,7 +132,6 @@ map <leader>ef <Action>(ExtractFunction)
 " Do something
 map <leader>di <Action>(ShowIntentionActions)
 map <leader>db <Action>(ToggleLineBreakpoint)
-map <leader>dg <Action>(Gradle.ExecuteTask)
 
 " Show something
 map <leader>ss <Action>(FileStructurePopup)
