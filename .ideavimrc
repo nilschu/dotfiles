@@ -49,8 +49,8 @@ map <leader>fr <Action>(RecentFiles)
 map <leader>ft <Action>(FindInPath)
 
 " (Move between methods)
-map mu <Action>(MethodUp)
-map md <Action>(MethodDown)
+" map mu <Action>(MethodUp)
+" map md <Action>(MethodDown)
 
 " (Code collapse)
 map <leader>cc <Action>(CollapseRegion)
@@ -60,6 +60,15 @@ map <leader>cE <Action>(ExpandAllRegions)
 
 " (Comment)
 map <leader>cl <Action>(CommentByLineComment)
+
+" Github Copilot
+" alt + l
+imap ¬ <Action>(copilot.applyInlaysNextWord)
+" alt + o
+imap ø <Action>(copilot.applyInlaysNextLine)
+map <leader>co <Action>(copilot.chat.show)
+map <leader>cs <Action>(copilot.openCopilot)
+
 
 " Join Lines
 map <leader>j <Action>(EditorJoinLines)
@@ -107,8 +116,8 @@ map <leader>sh <Action>(SplitHorizontally)
 map <leader>su <Action>(Unsplit)
 
 " Move line up/down option + k/j
-map <M-k> <Action>(MoveLineUp)
-map <M-j> <Action>(MoveLineDown)
+nmap <M-k> <Action>(MoveLineUp)
+nmap <M-j> <Action>(MoveLineDown)
 
 
 " New ...

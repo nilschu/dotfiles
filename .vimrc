@@ -71,8 +71,8 @@ set showmode
 set showcmd
 
 " Searching
-nnoremap / /\v
-vnoremap / /\v
+" noremap / /\v
+" vnoremap / /\v
 set hlsearch
 set incsearch
 set ignorecase
@@ -109,6 +109,12 @@ let g:solarized_termtrans=1
 " Move between blocks
 map J }
 map K {
+
+" method down (from opening line)
+map md f{%
+
+" move to end of next method (if outside of method)
+" map md /{<CR>%
 
 " Block ident
 vmap < <gv
